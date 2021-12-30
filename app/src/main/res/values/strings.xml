@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Weather Forecast</string>
+    <string name="city_name_hint">Enter city name</string>
+    <string name="weather_date">Date: %s</string>
+    <string name="weather_avg_temp">Average Temperature: %s</string>
+    <string name="weather_pressure">Pressure: %s</string>
+    <string name="weather_humidity">Humidity: %s</string>
+    <string name="weather_description">Description: %s</string>
+    <string name="no_data">No data</string>
+</resources>

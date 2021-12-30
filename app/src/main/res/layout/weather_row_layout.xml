@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="weatherForecast"
+            type="com.example.weatherapp.model.local.FormattedWeatherForecast" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/vertical_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/weather_date(weatherForecast.date)}"/>
+
+        <TextView
+            android:id="@+id/tv_avg_temp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/weather_avg_temp(weatherForecast.avgTemp)}" />
+
+        <TextView
+            android:id="@+id/tv_pressure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/weather_pressure(weatherForecast.pressure)}" />
+
+        <TextView
+            android:id="@+id/tv_humidity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/weather_humidity(weatherForecast.humidity)}" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/weather_description(weatherForecast.description)}" />
+    </LinearLayout>
+</layout>
