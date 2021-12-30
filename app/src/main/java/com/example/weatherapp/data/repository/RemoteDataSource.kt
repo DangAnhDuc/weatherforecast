@@ -1,7 +1,7 @@
 package com.example.weatherapp.data.repository
 
 import com.example.weatherapp.data.network.WeatherApi
-import com.example.weatherapp.model.remote.CityWeather
+import com.example.weatherapp.domain.model.remote.CityWeather
 import retrofit2.Response
 import javax.inject.Inject
 

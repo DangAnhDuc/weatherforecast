@@ -1,29 +1,16 @@
 package com.example.weatherapp.util
 
 import android.text.format.DateFormat
-import androidx.annotation.Keep
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
-import com.example.weatherapp.util.Constants.Companion.DATE_FORMAT_PATTERN
-import com.example.weatherapp.util.Constants.Companion.MINIMUM_SEARCH_LENGHT
-import com.example.weatherapp.util.Constants.Companion.ONE_SECOND_IN_MILLIS
-import com.example.weatherapp.model.remote.CityWeather
-import com.example.weatherapp.model.local.FormattedCityWeather
-import com.example.weatherapp.model.local.FormattedWeatherForecast
+import com.example.weatherapp.common.Constants.Companion.DATE_FORMAT_PATTERN
+import com.example.weatherapp.common.Constants.Companion.MINIMUM_SEARCH_LENGHT
+import com.example.weatherapp.common.Constants.Companion.ONE_SECOND_IN_MILLIS
+import com.example.weatherapp.common.TempUnit
+import com.example.weatherapp.domain.model.local.FormattedCityWeather
+import com.example.weatherapp.domain.model.local.FormattedWeatherForecast
+import com.example.weatherapp.domain.model.remote.CityWeather
 import java.util.*
 
-@Keep
-fun <T> LiveData<T>.observeOnce(lifecycleOwner: LifecycleOwner, observer: Observer<T>) {
-    observe(lifecycleOwner, object : Observer<T> {
-        override fun onChanged(t: T) {
-            removeObserver(this)
-            observer.onChanged(t)
-        }
-    })
-}
-
-fun CityWeather?.convertWeatherDataViewModel(): FormattedCityWeather? {
+fun CityWeather?.convertWeatherDataViewModel(): FormattedCityWeather {
     val forecastList = mutableListOf<FormattedWeatherForecast>()
     this?.list?.forEach { weatherForecast ->
         val dateInMillis = weatherForecast.dateTime * ONE_SECOND_IN_MILLIS
@@ -51,9 +38,9 @@ fun CityWeather?.convertWeatherDataViewModel(): FormattedCityWeather? {
     }
     var cityName = ""
     this?.city?.name?.let {
-        cityName = it;
+        cityName = it
     }
-    return FormattedCityWeather(cityName = cityName, weatherForeCast = forecastList);
+    return FormattedCityWeather(cityName = cityName, weatherForeCast = forecastList)
 }
 
 private fun calculateAvgTemperature(vararg temperature: Float): Int = temperature.average().toInt()

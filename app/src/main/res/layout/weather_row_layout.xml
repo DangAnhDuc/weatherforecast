@@ -5,7 +5,7 @@
 
         <variable
             name="weatherForecast"
-            type="com.example.weatherapp.model.local.FormattedWeatherForecast" />
+            type="com.example.weatherapp.domain.model.local.FormattedWeatherForecast" />
     </data>
 
     <LinearLayout

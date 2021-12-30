@@ -5,7 +5,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.weatherapp.data.database.entities.WeatherEntity
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface WeatherDao {
@@ -13,5 +12,5 @@ interface WeatherDao {
     suspend fun insertCityWeather(recipesEntity: WeatherEntity)
 
     @Query("SELECT * FROM weather_table ORDER BY id ASC ")
-    fun readCityWeather(): Flow<List<WeatherEntity>>
+    fun readCityWeather(): List<WeatherEntity>
 }

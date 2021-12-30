@@ -1,7 +1,7 @@
 package com.example.weatherapp.data.database
 
 import androidx.room.TypeConverter
-import com.example.weatherapp.model.local.FormattedCityWeather
+import com.example.weatherapp.domain.model.local.FormattedCityWeather
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
