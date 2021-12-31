@@ -9,7 +9,7 @@ import com.example.weatherapp.data.database.entities.WeatherEntity
 @Dao
 interface WeatherDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCityWeather(recipesEntity: WeatherEntity)
+    suspend fun insertCityWeather(weatherEntity: WeatherEntity)
 
     @Query("SELECT * FROM weather_table ORDER BY id ASC ")
     fun readCityWeather(): List<WeatherEntity>

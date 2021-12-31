@@ -12,8 +12,8 @@ class InsertWeatherToLocalDbUseCase @Inject constructor(
         offlineCacheCityWeather(formattedCityWeather)
     }
 
-    private suspend fun insertCityWeather(recipesEntity: WeatherEntity) {
-        repository.local.insertCityWeather(recipesEntity)
+    private suspend fun insertCityWeather(weatherEntity: WeatherEntity) {
+        repository.local.insertCityWeather(weatherEntity)
     }
 
     private suspend fun offlineCacheCityWeather(formattedCityWeather: FormattedCityWeather) {
