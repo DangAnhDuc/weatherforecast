@@ -115,7 +115,7 @@
 - [x] Design app's architecture (Using MVVM)
 - [x] Apply LiveData mechanism
 - [x] UI should look like attachment
-- [ ] Write UnitTests
+- [x] Write UnitTests
 - [x] Secure Android app from:
   - [x] Decompile APK
   - [x] Rooted device
