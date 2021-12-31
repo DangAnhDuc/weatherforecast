@@ -51,6 +51,7 @@
 
 - Data binding for activity
 - Data binding for adapter
+- View binding for activity and fragment
 
 ## Code structure
 
@@ -97,7 +98,8 @@
 - Multi-thread: Kotlin Coroutine
 - Observer data: LiveData + Lifecycle
 - Decompile apk and rooted detection: using code and proguard
-- Binding: Data Binding
+- Binding: Data Binding + View Binding
+- Testing: JUnit + Mockito
 
 ## How to run?
 
