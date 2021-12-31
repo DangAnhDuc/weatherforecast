@@ -4,7 +4,7 @@ import com.example.weatherapp.data.repository.Repository
 import com.example.weatherapp.domain.model.local.FormattedCityWeather
 import com.example.weatherapp.domain.model.remote.CityWeather
 import com.example.weatherapp.common.NetworkResult
-import com.example.weatherapp.util.convertWeatherDataViewModel
+import com.example.weatherapp.util.convertToFormattedCityWeather
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
@@ -43,7 +43,7 @@ class GetWeatherFromAPIUseCase @Inject constructor(
                 return NetworkResult.Error("Weather not found.")
             }
             response.isSuccessful -> {
-                val formattedCityWeather = response.body().convertWeatherDataViewModel()
+                val formattedCityWeather = response.body().convertToFormattedCityWeather()
                 return NetworkResult.Success(formattedCityWeather!!)
             }
             else -> {

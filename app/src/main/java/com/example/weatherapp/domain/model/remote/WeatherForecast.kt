@@ -7,16 +7,16 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class WeatherForecast(
     @SerializedName("dt")
-    val dateTime: Long,
+    val dateTime: Int,
 
     @SerializedName("pressure")
-    val pressure: Long,
+    val pressure: Int,
 
     @SerializedName("humidity")
     val humidity: Int,
 
     @SerializedName("weather")
-    val weather: List<WeatherDes>,
+    val weather: List<WeatherInfo>,
 
     @SerializedName("temp")
     val temp: Temp,

@@ -7,20 +7,20 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Temp(
     @SerializedName("day")
-    val day: Float,
+    val day: Double,
 
     @SerializedName("night")
-    val night: Float,
+    val night: Double,
 
     @SerializedName("eve")
-    val evening: Float,
+    val evening: Double,
 
     @SerializedName("morn")
-    val morning: Float,
+    val morning: Double,
 
     @SerializedName("min")
-    val min: Float,
+    val min: Double,
 
     @SerializedName("max")
-    val max: Float,
+    val max: Double,
 ):Parcelable

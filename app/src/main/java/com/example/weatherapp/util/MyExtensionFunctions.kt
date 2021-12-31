@@ -10,7 +10,7 @@ import com.example.weatherapp.domain.model.local.FormattedWeatherForecast
 import com.example.weatherapp.domain.model.remote.CityWeather
 import java.util.*
 
-fun CityWeather?.convertWeatherDataViewModel(): FormattedCityWeather {
+fun CityWeather?.convertToFormattedCityWeather(): FormattedCityWeather {
     val forecastList = mutableListOf<FormattedWeatherForecast>()
     this?.list?.forEach { weatherForecast ->
         val dateInMillis = weatherForecast.dateTime * ONE_SECOND_IN_MILLIS
@@ -43,7 +43,7 @@ fun CityWeather?.convertWeatherDataViewModel(): FormattedCityWeather {
     return FormattedCityWeather(cityName = cityName, weatherForeCast = forecastList)
 }
 
-private fun calculateAvgTemperature(vararg temperature: Float): Int = temperature.average().toInt()
+private fun calculateAvgTemperature(vararg temperature: Double): Int = temperature.average().toInt()
 
 fun String.verifySearchText(): Boolean {
     return this.length >= MINIMUM_SEARCH_LENGHT
